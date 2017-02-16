@@ -3,7 +3,7 @@ apply plugin: 'com.android.library'
 version = "1.1.0"
 
 dependencies {
-    compile fileTree(dir: 'libs', include: '*.jar')
+//    compile fileTree(dir: 'libs', include: '*.jar')
     provided 'com.android.support:recyclerview-v7:23.1.0'
 }
 
@@ -50,34 +50,34 @@ android {
     }
 }
 
-task sourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
-}
-task javadoc(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-    classpath += configurations.compile
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-}
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
-javadoc {
-    options{
-        encoding "UTF-8"
-        charSet 'UTF-8'
-        author true
-        version true
-        links "http://docs.oracle.com/javase/7/docs/api"
-        title "PROJ_ARTIFACTID"
-    }
-}
-
-artifacts {
-    archives javadocJar
-    archives sourcesJar
-}
+//task sourcesJar(type: Jar) {
+//    from android.sourceSets.main.java.srcDirs
+//    classifier = 'sources'
+//}
+//task javadoc(type: Javadoc) {
+//    source = android.sourceSets.main.java.srcDirs
+//    classpath += configurations.compile
+//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+//}
+//task javadocJar(type: Jar, dependsOn: javadoc) {
+//    classifier = 'javadoc'
+//    from javadoc.destinationDir
+//}
+//javadoc {
+//    options{
+//        encoding "UTF-8"
+//        charSet 'UTF-8'
+//        author true
+//        version true
+//        links "http://docs.oracle.com/javase/7/docs/api"
+//        title "PROJ_ARTIFACTID"
+//    }
+//}
+//
+//artifacts {
+//    archives javadocJar
+//    archives sourcesJar
+//}
 
 
 
